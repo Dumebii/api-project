@@ -6,12 +6,14 @@ import Header from './components/Navigation';
 
 function App() {
   const [mode, setMode] = useState(false)
-   
+   function onClick() {
+    setMode(!mode)
+   }
 
   return (
     <div className={mode && 'dark' }>
-    <Header />
-    <button className='bg-blue-500 h-[50px] w-[50px]' onClick={() => setMode(!mode)}>Dark mode</button>
+    <Header onClick={onClick} />
+    {/* <button className='bg-blue-500 h-[50px] w-[50px]' onClick={() => setMode(!mode)}>Dark mode</button> */}
     <Countries />
     </div>
   );

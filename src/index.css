@@ -24,3 +24,10 @@ border-radius: 5%;}
   background-color: hsl(207, 26%, 17%);
   color: hsl(0, 0%, 100%);
 }
+
+.nav-button::after {
+  content: 'Dark mode';
+  font-size: small;
+  position: relative;
+  top: 0px;
+}
