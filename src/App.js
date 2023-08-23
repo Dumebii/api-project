@@ -1,7 +1,9 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import data from './data.json'
 import Countries from './components/Countries';
 import Header from './components/Navigation';
+import DropdownSearch from './components/Functionality';
 
 
 function App() {
@@ -10,11 +12,20 @@ function App() {
     setMode(!mode)
    }
 
+   const [item, setItem]= useState([]);
+  
+  useEffect(()=>{
+    fetch('data.json')
+    .then(res => res.json())
+    .then(json => setItem(json))
+  },[])
+  console.log(data.length)
+
   return (
     <div className={mode && 'dark' }>
     <Header onClick={onClick} />
-    {/* <button className='bg-blue-500 h-[50px] w-[50px]' onClick={() => setMode(!mode)}>Dark mode</button> */}
-    <Countries />
+    <DropdownSearch item={item}/>
+    <Countries item={item} />
     </div>
   );
 }

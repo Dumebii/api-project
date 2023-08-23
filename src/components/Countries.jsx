@@ -2,16 +2,9 @@ import { useEffect, useState } from 'react'
 import data from '../data.json'
 
 
-export default function Countries() {
-const [item, setItem]= useState([]);
-  
-useEffect(()=>{
-  fetch('data.json')
-  .then(res => res.json())
-  .then(json => setItem(json))
-},[])
+export default function Countries({ item }) {
 
-console.log(data.length)
+
 
     return(
         <div>
