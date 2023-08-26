@@ -4,8 +4,6 @@ import data from './data.json'
 import Countries from './components/Countries';
 import Header from './components/Navigation';
 import DropdownFilter from './components/Functionality';
-// import data from './data.json'
-
 
 
 function App() {
@@ -17,11 +15,11 @@ function App() {
    const [item, setItem]= useState([]);
   
   useEffect(()=>{ 
-    fetch('data.json')
+    fetch('./data.json')
     .then(res => res.json())
     .then(json => setItem(json))
   },[])
-  console.log(data.length)
+  console.log(item);
 
   return (
     <div className={mode && 'dark' }>
