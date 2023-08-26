@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import data from './data.json'
 import Countries from './components/Countries';
 import Header from './components/Navigation';
-import DropdownSearch from './components/Functionality';
+import DropdownFilter from './components/Functionality';
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
 
    const [item, setItem]= useState([]);
   
-  useEffect(()=>{
+  useEffect(()=>{ 
     fetch('data.json')
     .then(res => res.json())
     .then(json => setItem(json))
@@ -24,7 +24,7 @@ function App() {
   return (
     <div className={mode && 'dark' }>
     <Header onClick={onClick} />
-    <DropdownSearch item={item}/>
+    <DropdownFilter item={item}/>
     <Countries item={item} />
     </div>
   );
