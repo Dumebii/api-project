@@ -1,42 +1,31 @@
 import React, { useState } from 'react';
+import Dropdown from 'react-bootstrap/Dropdown';
+import data from '../data.json'
+
+
 
 const DropdownFilter = ({ item }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [filterText, setFilterText] = useState('');
+  return(
+    <div>
+    <Dropdown>
+      <Dropdown.Toggle variant="success" id="dropdown-basic">
+        Dropdown Button
+      </Dropdown.Toggle>
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleOptionClick = (option) => {
-    setSelectedOption(option);
-    setIsOpen(false);
-  };
-
-  const filteredOptions = item.regions.filter((option) =>
-    option.toLowerCase().includes(filterText.toLowerCase())
-  );
-
-  return (
-    <div className="dropdown-filter">
-      <div className="dropdown-header" onClick={toggleDropdown}>
-        {selectedOption || 'Select an option'}
-      </div>
-      {isOpen && (
-        <div className="dropdown-content">
-       
-          <ul>
-            {filteredOptions.map((option, index) => (
-              <li key={index} onClick={() => handleOptionClick(option)}>
-                {option}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <Dropdown.Menu>
+      {/* {data.map((item) => <Dropdown.Item href="#/action-1">{item.region}</Dropdown.Item>)} */}
+      <Dropdown.Item href="#/action-1">Antartica</Dropdown.Item>
+      <Dropdown.Item href="#/action-1">Asia</Dropdown.Item>
+      <Dropdown.Item href="#/action-1">Africa</Dropdown.Item>
+      <Dropdown.Item href="#/action-1">Australia</Dropdown.Item>
+      <Dropdown.Item href="#/action-1">Europe</Dropdown.Item>
+      <Dropdown.Item href="#/action-1">North America</Dropdown.Item>
+      <Dropdown.Item href="#/action-1">Oceania</Dropdown.Item>
+      <Dropdown.Item href="#/action-1">South America</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
     </div>
-  );
+  )
 };
 
 export default DropdownFilter;

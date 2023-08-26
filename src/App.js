@@ -4,6 +4,8 @@ import data from './data.json'
 import Countries from './components/Countries';
 import Header from './components/Navigation';
 import DropdownFilter from './components/Functionality';
+// import data from './data.json'
+
 
 
 function App() {

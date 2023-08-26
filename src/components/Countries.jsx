@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react'
 import data from '../data.json'
 
 
-export default function Countries({ item }) {
+export default function Countries() {
 
 
 
