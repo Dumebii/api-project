@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Countries from './components/Countries';
-import Header from './components/Navigation';
-import DropdownFilter from './components/Functionality';
+import Countries from './Countries';
+import Header from './Navigation';
+import DropdownFilter from './Functionality';
 
 export default function Homepage() {
 

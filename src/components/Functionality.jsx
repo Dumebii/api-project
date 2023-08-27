@@ -1,7 +1,5 @@
-import { useState } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
-import data from '../data.json'
-import Countries from './Countries';
+import { Link } from "react-router-dom";
 
 
 
@@ -10,13 +8,16 @@ const DropdownFilter = ({ }) => {
     <>
     <Dropdown>
       <Dropdown.Toggle variant="success" id="dropdown-basic">
-        Dropdown Button
+        Filter By Region
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
-        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+        <Link to={'/'}><Dropdown.Item href="#/action-1">All</Dropdown.Item></Link>
+        <Link to={'/africa'}><Dropdown.Item href="#/action-1">Africa</Dropdown.Item></Link>
+        <Link to={'/america'}><Dropdown.Item href="#/action-1">America</Dropdown.Item></Link>
+        <Link to={'/asia'}><Dropdown.Item href="#/action-1">Asia</Dropdown.Item></Link>
+        <Link to={'/europe'}><Dropdown.Item href="#/action-1">Europe</Dropdown.Item></Link>
+        <Link to={'/oceania'}><Dropdown.Item href="#/action-1">Oceania</Dropdown.Item></Link>
       </Dropdown.Menu>
     </Dropdown>
     </>
