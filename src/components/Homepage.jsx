@@ -4,7 +4,6 @@ import Header from './Navigation';
 import DropdownFilter from './Functionality';
 
 export default function Homepage() {
-
     const [mode, setMode] = useState(false)
    function onClick() {
     setMode(!mode)
