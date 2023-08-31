@@ -1,13 +1,19 @@
 import data from '../data.json'
 import Header from './Navigation';
 import DropdownFilter from './Functionality';
+import { ThemeContext } from './Homepage.jsx';
+import { useContext } from 'react';
+
 
 
 
 export default function Africa() {
+    const theme = useContext(ThemeContext);
     return(
         <div> 
+        <ThemeContext.Provider value={theme}>
         <Header />
+        </ThemeContext.Provider>
         <DropdownFilter />  
          <main className="lg:grid lg:grid-cols-4 ">
         { data.map((item) => item.region === 'Africa' &&
