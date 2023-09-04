@@ -1,10 +1,11 @@
 import data from '../data.json'
+import { Link } from "react-router-dom";
+
+
 export default function Countries() {
 
-
-
     return(
-        <div>
+        <div><Link to={`/country/${country.name}`}>
             <main className=" lg:grid lg:grid-cols-4">
         { data.map((item) => <section key={item.name}>
           <div className='w-[280px] h-[300px] m-10 shadow countries text-sm'>
@@ -16,7 +17,7 @@ export default function Countries() {
             <p>{item.capital}</p></section>
           </div>
         </section>)}
-        </main>
+        </main></Link>
         </div>
     )
 }

@@ -4,7 +4,7 @@ import Header from './Navigation';
 import DropdownFilter from './Functionality';
 import { createContext } from 'react';
 
-   export const ThemeContext = createContext('false');
+   export const ThemeContext = createContext();
 
 export default function Homepage() {
     const [mode, setMode] = useState(false)

@@ -12,7 +12,7 @@ export default function Africa() {
     return(
         <div> 
         <ThemeContext.Provider value={theme}>
-        <Header />
+        <Header value={theme}/>
         </ThemeContext.Provider>
         <DropdownFilter />  
          <main className="lg:grid lg:grid-cols-4 ">

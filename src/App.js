@@ -4,8 +4,10 @@ import America from './components/America'
 import Asia from './components/Asia';
 import Europe from './components/Europe'
 import Homepage from './components/Homepage';
-import { createBrowserRouter, RouterProvider} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, useParams } from 'react-router-dom';
 import Oceania from './components/Oceania';
+import CountryDetails from './CountryDetails';
+import data from './data.json';
 
 
 const router = createBrowserRouter([
@@ -13,6 +15,11 @@ const router = createBrowserRouter([
   path: "/",
   element: <Homepage />
 },
+{
+  path: "/country/:code",
+  element: <Country />
+}
+,
 {
   path: 'africa',
   element: <Africa />
@@ -35,11 +42,20 @@ const router = createBrowserRouter([
 }
 ])
 
+
 function App() {
 
   return (
     <RouterProvider router={router} />
   );
+
+ 
+}
+function Country() {
+  // Using useParams hook to access the dynamic segment of the URL
+  let { code } = useParams();
+  const country = data.find(c => c.name === code);
+  return country ? <CountryDetails country={count} /> : <h2>Country not found</h2>;
 }
 
 export default App;
