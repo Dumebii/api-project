@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Countries from './Countries';
 import Header from './Navigation';
-import DropdownFilter from './Functionality';
+import { DropdownFilter, Search } from './Functionality';
 import { createContext } from 'react';
 
    export const ThemeContext = createContext();
@@ -17,7 +17,10 @@ export default function Homepage() {
     <ThemeContext.Provider value={onClick}>
     <Header  />
     </ThemeContext.Provider>
-    <DropdownFilter />
+    <div className='flex space-a'>
+      <Search />
+      <DropdownFilter />
+    </div>
     <Countries />
     </div>
     )

@@ -1,11 +1,11 @@
 import data from '../data.json'
-import { Link } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 
 export default function Countries() {
 
     return(
-        <div><Link to={`/country/${country.name}`}>
+        <div><Link to={'/countries/:name'}>
             <main className=" lg:grid lg:grid-cols-4">
         { data.map((item) => <section key={item.name}>
           <div className='w-[280px] h-[300px] m-10 shadow countries text-sm'>

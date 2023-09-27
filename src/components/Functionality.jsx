@@ -1,9 +1,11 @@
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Link } from "react-router-dom";
+import { useState } from 'react';
+import data from '../data.json'
 
 
 
-const DropdownFilter = ({ }) => {
+export function DropdownFilter() {
   return(
     <div className='flex justify-between mt-8'>
     <input type='search' name='q' className='shadow pl-10 p- pr-36 ml-10' placeholder='Search for a country...'/>
@@ -25,4 +27,29 @@ const DropdownFilter = ({ }) => {
   )
 };
 
-export default DropdownFilter;
+
+export  function Search() {
+   
+  const [searchItem, setSearchItem] = useState('');
+  const [items] = useState([data.name]);
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const filteredItems = items.filter((item) =>
+    item.toLowerCase().includes(searchItem.toLowerCase())
+  );
+
+  return(
+    <div>
+      <h2>Searchable List</h2>
+      <input
+        type="text"
+        placeholder="Search"
+        value={searchTerm}
+        onChange={handleSearchChange}
+      />
+    </div>
+  )
+}
