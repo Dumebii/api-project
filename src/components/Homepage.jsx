@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import Countries from './Countries';
 import Header from './Navigation';
-import { DropdownFilter, Search } from './Functionality';
+import DropdownFilter from './Functionality';
 import { createContext } from 'react';
+import Search  from './Search';
 
    export const ThemeContext = createContext();
 
